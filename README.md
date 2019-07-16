@@ -2,7 +2,7 @@
 
 #### python notes
 
-- [python小知识]()
+- [python小知识]([https://github.com/yaosir0317/Notes/blob/develop/python.md#python%E5%B0%8F%E7%9F%A5%E8%AF%86](https://github.com/yaosir0317/Notes/blob/develop/python.md#python小知识))
 
 #### PostgreSQl notes
 
