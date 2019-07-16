@@ -24,7 +24,7 @@
 
 #### shell notes
 
-- [linux命令](https://github.com/yaosir0317/Notes/blob/master/docs/linux.md#linux命令)
-- [linux符号](https://github.com/yaosir0317/Notes/blob/master/docs/linux.md#linux符号)
-- [shell脚本](https://github.com/yaosir0317/Notes/blob/master/docs/linux.md#shell)
+- [linux命令](https://github.com/yaosir0317/Notes/blob/master/docs/shell.md#linux命令)
+- [linux符号](https://github.com/yaosir0317/Notes/blob/master/docs/shell.md#linux符号)
+- [shell脚本](https://github.com/yaosir0317/Notes/blob/master/docs/shell.md#shell)
 
