@@ -28,3 +28,7 @@
 - [linux符号](https://github.com/yaosir0317/Notes/blob/master/docs/shell.md#linux符号)
 - [shell脚本](https://github.com/yaosir0317/Notes/blob/master/docs/shell.md#shell)
 
+#### git notes
+
+- [git命令](https://github.com/yaosir0317/Notes/blob/master/docs/git.md#git命令)
+- [git工作流](https://github.com/yaosir0317/Notes/blob/master/docs/git.md#git工作流)
