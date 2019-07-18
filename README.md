@@ -14,7 +14,13 @@
 
 #### docker notes
 
-#### javascript notes
+#### javascript 
+
+- [值,类型和操作](https://github.com/yaosir0317/Notes/blob/master/docs/javascript.md#值,类型和操作)
+- [程序结构](https://github.com/yaosir0317/Notes/blob/master/docs/javascript.md#程序结构)
+- [函数](https://github.com/yaosir0317/Notes/blob/master/docs/javascript.md#函数)
+- [数据结构](https://github.com/yaosir0317/Notes/blob/master/docs/javascript.md#数据结构)
+- [对象](https://github.com/yaosir0317/Notes/blob/master/docs/javascript.md#对象)
 
 #### python spider notes
 
