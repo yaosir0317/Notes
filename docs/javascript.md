@@ -37,7 +37,7 @@
   console.log(false ? 1 : 2);  //false取值:右边
   ```
 
-- 类型转换,当运算时遇到错误类型的值时,js会自动转换为它所需要的类型
+- **类型转换**,当运算时遇到错误类型的值时,js会自动转换为它所需要的类型
 
   ```
   console.log(8 * null) // null 被认为 0
@@ -151,6 +151,197 @@ result = result + 1 等价于 result += 1  等价于 result++  //其余运算同
 
 # 函数
 
+## 定义
+
+```
+// 1  
+function fn(x){
+	return x*x  // 未定义return值则返回undefined
+}
+//2 let/var同理
+const fn=function(x){
+	return x*x
+}
+```
+
+## 使用
+
+- 函数声明不是常规的从上到下控制流程的一部分,你永远不用担心因使用函数在定义函数之前而报错
+
+- ```
+  // 不会报错
+  console.log("The future says:", future());
+  function future() {
+  	return "You'll never have flying cars";
+  }
+  ```
+
+- 闭包
+
+  ```
+  function wrapValue(n) {
+    let local = n;
+    return () => local;
+  }
+  let wrap1 = wrapValue(1);
+  let wrap2 = wrapValue(2);
+  console.log(wrap1());
+   // → 1
+  console.log(wrap2());
+  // → 2
+  
+  
+  //另一种更简单的表示形式
+  function multiplier(factor) {
+     return number => number * factor;
+  }
+  let twice = multiplier(2);
+  console.log(twice(5));
+   // → 10
+  
+  ```
+
+- 递归
+
+  在典型的js实现中,递归相较于循环慢了大约三倍
+
+  ```
+  function power(exponent) {
+     if (exponent == 1) {
+       return 1;
+     } else {
+       return exponent*power(exponent-1);
+     }
+  }
+  console.log(power(6));
+   // → 720 实现n的阶乘
+  ```
+
+  
+
+## 箭头函数
+
+```
+// 箭头函数多参数形式
+const power = (base, exponent) => {
+   let result = 1;
+   for (let count = 0; count < exponent; count++) {
+     result *= base;
+   }
+   return result;
+ };
+ // 箭头函数单参数形式
+const square1 = (x) => { return x * x; };
+const square2 = x => x * x;
+ // 箭头函数无参数形式
+const horn = () => { console.log("Toot");
+};
+```
+
+## 参数
+
+- 位置参数
+
+  js中函数使用位置参数会将少传的参数默认使用undefined替代,而额外多传的参数将会被忽略
+
+  ```
+  function minus(a, b) {
+     if (b === undefined) return -a;
+     else return a - b;
+  }
+  console.log(minus(10));
+  // → -10
+  console.log(minus(10, 5));
+  // → 5
+  console.log(minus(10, 5, "hello world"));
+  // → 5
+  ```
+
+- 关键字参数
+
+
+
 # 数据结构
+
+## 属性
+
+所有的js对象都有属性,除了null和undefined
+
+```
+let a = [1, 2, 3]
+console.log(a.length)  // → 3
+console.log(null.length)  // → TypeError: Cannot read property
+```
+
+属性的使用通过两种方式`.`和`[]`,但是这俩种方式不一定表示的是同一种属性
+
+```
+let a = [1, 2, 3]
+console.log(a.length)  // → 3
+console.log(a["length"])  // → 3
+```
+
+## 方法
+
+通过`.methodName()`使用
+
+```
+let doh = "Doh";
+console.log(typeof doh.toUpperCase); // → function 
+console.log(doh.toUpperCase());  // → DOH
+```
+
+## 对象
+
+```
+let day1 = {
+	squirrel: false,
+	events: ["work", "touched tree", "pizza", "running"]
+}; 
+console.log(day1.squirrel); // → false 
+console.log(day1.wolf);  // → undefined
+day1.wolf = false; 
+console.log(day1.wolf);  // → false
+```
+
+删除对象属性,判断属性存在
+
+```
+let anObject = {left: 1, right: 2};
+console.log(anObject.left);
+ // → 1
+delete anObject.left;
+console.log(anObject.left);
+// → undefined
+console.log("left" in anObject); // → false
+console.log("right" in anObject); // → true
+```
+
+查看对象所有属性
+
+```
+let al = {a: 1, b: 2};
+console.log(Object.keys(al));
+```
+
+将对象的属性拷贝到另一个对象
+
+```
+let objectA = {a: 1, b: 2}; 
+Object.assign(objectA, {b: 3, c: 4}); 
+console.log(objectA);// → {a: 1, b: 3, c: 4}
+```
+
+使用`const`建立的对象
+
+```
+const score = {visitors: 0, home: 0}; 
+// This is okay
+score.visitors = 1;
+// This isn't allowed
+score = {visitors: 1, home: 1};
+```
+
+
 
 # 对象
