@@ -120,6 +120,10 @@
   for(let a=10;a>0;a--){
   	console.log(a)
   }
+  // 循环数组
+  for(let a of array){
+  	console.log(a)
+  }
   ```
 
 - `switch`
@@ -257,6 +261,21 @@ const horn = () => { console.log("Toot");
   // → 5
   ```
 
+- 额外位置形参`...`
+
+  ```
+  function max(...numbers) {
+     let result = -Infinity;
+     for (let number of numbers) {
+       if (number > result) result = number;
+     }
+     return result;
+   }
+   console.log(max(4, 1, 9, -2));
+  ```
+
+  
+
 - 关键字参数
 
 
@@ -342,6 +361,49 @@ score.visitors = 1;
 score = {visitors: 1, home: 1};
 ```
 
+## 数组
+
+定义
+
+```
+let array = []
+```
+
+方法
+
+```
+array.push(1)		// 末尾添加
+array.pop()			// 末尾删除
+array.unshift()	// 开头添加
+array.shift(2)	// 开头删除
+array.indexOf(element)  //返回元素的index
+array.slice(2,4)  // 切片,互相独立
+array.concat([0]) //列表合并为新列表
+```
+
+## 字符串
+
+方法
+
+```
+string.slice(4, 7)
+string.indexOf("u")  // 区别array的是可以取多字符的索引
+string.trim()  // 去空白
+String(6).padStart(3, "0") // 实现高位补充字符,此处是返回一个新字符串
+string.split(" ")  // 以空格切割
+array.join(",")   // 以逗号拼接
+string.repeat(n)  // 重复拼接字符串n次,形成一个新字符串
+```
+
 
 
 # 对象
+
+## Math
+
+```
+Math.random()  // 返回0-1之间的随机数
+Math.PI  
+Math.floor(Math.random() * 10)  // js实现随机数
+```
+
