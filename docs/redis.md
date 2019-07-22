@@ -26,7 +26,7 @@
 
   为key设置过期时间,以Unix时间戳为依据,成功返回1,key不存在返回0
 
-- KEYS pattern
+- `KEYS pattern`
 
   > **Time complexity:** O(n)
 
