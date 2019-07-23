@@ -118,3 +118,126 @@
   > **Time complexity:** O(1) 
 
   删除key,与del不同的是它不会造成阻塞
+
+## string
+
+- `APPEND key value`
+
+  > **Time complexity:** O(1)
+
+  如果key存在,且值为字符串,这个命令会向字符串末尾添加value,如果key不存在,将会创建
+
+- `BITCOUNT key [start end]`
+
+  > **Time complexity:** O(N)
+
+  返回字符串的bit数目
+
+- `DECR key`
+
+  > **Time complexity:** O(1)
+
+  将键对应的int值减一,如果key不存在,则创建使其值为0,再进行操作;如果键对应的值不能转换为int则会报错
+
+- `DECRBY key decrement`
+
+  > **Time complexity:** O(1)
+
+  将键对应的int值减decrement数量,如果key不存在,则创建使其值为0,再进行操作;如果键对应的值不能转换为int则会报错
+
+- `GET key`
+
+  > **Time complexity:** O(1)
+
+  返回key对应的字符串值,当值不是字符串类型,则会报错,因为get只用于获取字符串值,当key不存在返回nil
+
+- `GETRANGE key start end`
+
+  > **Time complexity:** O(N)
+
+  以切片形式获取key对应的字符串的值,支持从右向左取,也就是负索引
+
+- `GETSET key value`
+
+  > **Time complexity:** O(1)
+
+  将value值赋值给key,返回key的原始值,非字符串会报错
+
+- `INCR key`
+
+  > **Time complexity:** O(1)
+
+  将键对应的int值加一,如果key不存在,则创建使其值为0,再进行操作;如果键对应的值不能转换为int则会报错
+
+- `INCRBY key increment`
+
+  > **Time complexity:** O(1)
+
+  将键对应的int值加上increment数量,如果key不存在,则创建使其值为0,再进行操作;如果键对应的值不能转换为int则会报错
+
+- `INCRBYFLOAT key increment`
+
+  > **Time complexity:** O(1)
+
+  将键对应的int值加上increment的浮点数量,如果key不存在,则创建使其值为0,再进行操作;如果键对应的值不能转换为int则会报错
+
+- `MGET key [key ...]`
+
+  > **Time complexity:** O(N) where N is the number of keys to retrieve
+
+  返回给出key的值,当key不存在或非字符串则返回nil
+
+- `MSET key value [key value...]`
+
+  > **Time complexity:** O(N) where N is the number of keys to set.
+
+  写入给出的键值,当前操作会覆盖已有的键的值
+
+- `MSETNX key value [key value...]`
+
+  > **Time complexity:** O(N) where N is the number of keys to set.
+
+  写入给出的键值,当写入的键值已存在时,将不会写入,且操作为原子性
+
+- `PSETEX key milliseconds value`
+
+  > **Time complexity:** O(1)
+
+  设置键值时同时设置上过期时间,单位为毫秒
+
+- `SET key value[expiration EX seconds|PX milliseconds] [NX|XX]`
+
+  > **Time complexity:** O(1)
+
+  设置键值,会覆盖已有的,并且有一些额外的选项可以使用
+
+  ```
+  EX seconds -- Set the specified expire time, in seconds.
+  PX milliseconds -- Set the specified expire time, in milliseconds.
+  NX -- Only set the key if it does not already exist.
+  XX -- Only set the key if it already exist.
+  ```
+
+- `SETEX key seconds value`
+
+  > **Time complexity:** O(1)
+
+  设置键值时同时设置上过期时间,单位为秒
+
+- `SETNX key value`
+
+  > **Time complexity:** O(1)
+
+  当键值不存在时,设置键值
+
+- `SETRANGE key offset value`
+
+  > **Time complexity:** O(1)
+
+  覆盖偏移量后面部分的字符串的值
+
+- `STRLEN key`
+
+  > **Time complexity:** O(1)
+
+  返回key所对应的字符串的长度
