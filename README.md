@@ -30,6 +30,7 @@
 
 - [命令](./docs/redis.md#命令)
   - [keys](./docs/redis.md#keys)
+  - [string](./docs/redis.md#string)
 
 #### shell notes
 
