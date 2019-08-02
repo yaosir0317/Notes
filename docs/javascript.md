@@ -616,6 +616,43 @@ score = {visitors: 1, home: 1};
   arr.splice(2, 0, 'Google', 'Facebook'); // 返回[],因为没有删除任何元素 arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
   ```
 
+- map/reduce/filter
+
+  ```
+  var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  arr.map(String); // ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+  ```
+
+  Array的reduce()把一个函数作用在这个Array的[x1, x2, x3...]上，这个函数必须接收两个参数，reduce()把结果继续和序列的下一个元素做累积计算
+
+  ```
+  var arr = [1, 3, 5, 7, 9];  // 求和
+  arr.reduce(function (x, y) {
+  		return x + y; 
+  }); // 25
+  
+  ```
+
+  filter也是一个常用的操作，它用于把Array的某些元素过滤掉，然后返回剩下的元素
+
+  ```
+  var arr = [1, 2, 4, 5, 6, 9, 10, 15]; 
+  var r = arr.filter(function (x) {
+  		return x % 2 !== 0; 
+  });
+  r; // [1, 5, 9, 15] 保留奇数
+  // 接收多个参数
+  var arr = ['A', 'B', 'C'];
+  var r = arr.filter(function (element, index, self) {
+    console.log(element); // 依次打印'A', 'B', 'C' 
+    console.log(index); // 依次打印0, 1, 2 
+    console.log(self); // self就是变量arr
+    return true;
+  });
+  ```
+
+  
+
 ## 字符串
 
 - 多行字符串
