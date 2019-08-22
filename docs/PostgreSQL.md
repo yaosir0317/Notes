@@ -57,4 +57,27 @@
   select * from users order by random() limit 1;
   ```
 
+# PostGIS插件
+
+PostGIS是对象关系型数据库PostgreSQL的一个插件，PostGIS提供如下空间信息服务功能：空间对象、空间索引、空间操作函数和空间操作符, 包括：点（POINT）、线（LINESTRING）、多边形（POLYGON）、多点 （MULTIPOINT）、多线（MULTILINESTRING）、多边形（MULTIPOLYGON）和集合对象集 （GEOMETRYCOLLECTION）等。同时，PostGIS遵循OpenGIS的规范。
+
+- 安装
+
+  ```
+  yum install postgis2_96   # 因为安装的PostgreSQL版本为9.6，所以是postgis2_96
+  ```
+
+- 为数据库安装
+
+  ```
+  gisdb=# CREATE EXTENSION postgis;
+  gisdb=# CREATE EXTENSION postgis_topology;
+  ```
+
+- 检查
+
+  ```
+  \dx  # 查看是否安装成功插件
+  ```
+
   

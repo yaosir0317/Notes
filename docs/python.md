@@ -47,10 +47,13 @@
    queue.popleft()                 # The first to arrive now leaves 
    ```
 
-8. python中的圆周率`π`
+8. `math`模块
 
    ```
-   from math import pi
+   import math
+   math.pi          # python中的圆周率π
+   math.e           # python中的e
+   math.exp(i)      # e**x
    ```
 
 9. 一个元素不带括号也是元组
@@ -122,6 +125,14 @@
     num = 8
     num >>= 1  # 右移一位 1000 -> 0100,结果为4
     num <<= 1  # 左移一位 1000 -> 10000, 结果为16
+    ```
+
+17. keyword模块
+
+    ```
+    from keyword import iskeyword, kwlist
+    iskeyword("self")  # 判断字符串是否是python关键字
+    kwlist  # 输出所有的python关键字列表
     ```
 
     
